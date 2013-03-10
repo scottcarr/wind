@@ -60,7 +60,7 @@ The following function reads the sensor data file as above:
             else:
                 yield line
 
-For confidence, I define a *namedtuple* (essentially a struct) for holding each
+For convenience, I define a *namedtuple* (essentially a struct) for holding each
 "reading."
 
     def unpack_line(lines):
