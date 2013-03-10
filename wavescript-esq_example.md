@@ -60,7 +60,7 @@ The following function reads the sensor data file as above:
             else:
                 yield line
 
-For convience, I define a namedtuple (essentially a struct) for holding each
+For convience, I define a *namedtuple* (essentially a struct) for holding each
 "reading."
 
     def unpack_line(lines):
@@ -88,7 +88,7 @@ Now we could define a mini-stream processing app like:
     while 1:
         x.next()
 
-Where each call of x.next() *yields* a namedtuple of type Datum.  The details
+Where each call of x.next() *yields* a *namedtuple* of type *Datum*.  The details
 of the Datum tuple are not relevant at this point.
 
 Note that the for loop in *unpack_lines* only reads as many lines as it needs
