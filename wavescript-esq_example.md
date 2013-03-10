@@ -118,7 +118,7 @@ This is more interesting because it doesn't just:
 It pools a chunk of 100 tuples and then calculates an average over the window. 
 Again, it doesn't read in the whole list, but just 100 samples at a time.
 
-Doing something with the averages since it just reads in one average and yields
+Doing something with the averages is simple since we just readsin one average and yield
 one result.
 
     def classify(sig):
