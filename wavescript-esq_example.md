@@ -42,7 +42,7 @@ We can use this to model a stream of sensor readings:
     .
 
 With these generator functions we can build up a simulated stream processing
-applicaiton.
+application.
 
 ##An example
 
@@ -60,7 +60,7 @@ The following function reads the sensor data file as above:
             else:
                 yield line
 
-For convience, I define a *namedtuple* (essentially a struct) for holding each
+For confidence, I define a *namedtuple* (essentially a struct) for holding each
 "reading."
 
     def unpack_line(lines):
@@ -69,11 +69,11 @@ For convience, I define a *namedtuple* (essentially a struct) for holding each
             yield Datum(*map(float, (line.split())))
 
 This looks a little complicated, but it's not.  I'm using the output of the FAST
-simulation as my simumlated sensor.  Each line is tab separated.  *line.split()*
+simulation as my simulated sensor.  Each line is tab separated.  *line.split()*
 returns a list of a strings partitioned by white space. *map(float, alist)* applies
 the function *float* to each item of alist.  In this case each item
 is text string like "1.2323" and float("1.2323") is just the float 1.2323.  The
-asterisk (prounced "splat") makes a list into the arguments of a function.  For
+asterisk (pronounced "splat") makes a list into the arguments of a function.  For
 example:
 
     def printstuff(x,y,z):
@@ -89,7 +89,7 @@ Now we could define a mini-stream processing app like:
         x.next()
 
 Where each call of x.next() *yields* a *namedtuple* of type *Datum*.  The details
-of the Datum tuple are not relevant at this point.
+of the *Datum* tuple are not relevant at this point.
 
 Note that the for loop in *unpack_lines* only reads as many lines as it needs
 to calculate whatever it's returning with *yield*.  The complete list of readings
