@@ -68,6 +68,20 @@ For convience, I define a namedtuple (essentially a struct) for holding each
         for line in lines:
             yield Datum(*map(float, (line.split())))
 
+This looks a little complicated, but it's not.  I'm using the output of the FAST
+simulation as my simumlated sensor.  Each line is tab separated.  *line.split()*
+returns a list of a strings partitioned by white space. *map(float, alist)* applies
+the function *float* to each item of alist.  In this case each item
+is text string like "1.2323" and float("1.2323") is just the float 1.2323.  The
+asterisk (prounced "splat") makes a list into the arguments of a function.  For
+example:
+
+    def printstuff(x,y,z):
+        print x,y,z
+
+    k = [1,2,3]
+    printstuff(*k) # prints: 1, 2, 3
+
 Now we could define a mini-stream processing app like:
 
     x = unpack_line(read_input())
