@@ -149,6 +149,6 @@ at any function boundary.
 It "lazily" reads in only enough samples to get to the next *yield* statement.
 
 ##Future questions
--Can we express that application(s) we'd like to build in this manner
--What happens when the application is dynamic instead of statically calling
-the same functions in the same order
+    -Can we express that application(s) we'd like to build in this manner
+    -What happens when the application is dynamic instead of statically calling
+    the same functions in the same order
