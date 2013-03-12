@@ -60,8 +60,8 @@ The following function reads the sensor data file as above:
             else:
                 yield line
 
-For convenience, I define a *namedtuple* (essentially a struct) for holding each
-"reading."
+For convenience, I define a *namedtuple* (essentially a struct) called *Datum* 
+for holding each "reading."
 
     def unpack_line(lines):
         # split up the line and put it in a struct
@@ -118,7 +118,7 @@ This is more interesting because it doesn't just:
 It pools a chunk of 100 tuples and then calculates an average over the window. 
 Again, it doesn't read in the whole list, but just 100 samples at a time.
 
-Doing something with the averages is simple since we just readsin one average and yield
+Doing something with the averages is simple since we just read in one average and yield
 one result.
 
     def classify(sig):
