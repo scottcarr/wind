@@ -139,6 +139,16 @@ Now we can build a complete stream processing simulation.
             print "done." # out of data
             break
 
+The output of the program is:
+
+    OK. Average 12.5925.
+    OK. Average 12.12547.
+    DANGER! Average 10.21421.
+    OK. Average 12.241.
+    DANGER! Average 10.07955.
+    OK. Average 12.0259.
+    done.
+
 ##Key points
 
 ###The entire application is just a bunch of nested function calls.
