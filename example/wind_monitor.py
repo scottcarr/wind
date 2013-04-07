@@ -1,4 +1,4 @@
-from data_source import remove_elements, count_available_elements, create_stream,\
+from data_source import remove_elements, count_available_elements, create_source,\
         add_generator
 import numpy as np
 
@@ -25,6 +25,6 @@ def speed_detection():
         yield {label: True} 
 
 def init_wind_monitor():
-    create_stream(label)
+    create_source(label)
     add_generator(speed_detection(), cond)
 

@@ -16,15 +16,11 @@ are stream name(s) and the values are the data
 all_streams = {}
 all_generators = []
 
-def compact(alist):
-    """Transform a list into a representation FFTW can work on"""
-    return np.asarray(alist)
-
 def streamify(elements_dict):
     for label in elements_dict.iterkeys():
         all_streams[label].append(elements_dict[label])
 
-def create_stream(label):
+def create_source(label):
     all_streams[label] = []
 
 def add_generator(f, cond):

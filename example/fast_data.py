@@ -1,4 +1,4 @@
-from data_source import create_stream, add_generator
+from data_source import create_source, add_generator
 
 labels = ["Time","WindVxi","WindVyi","WindVzi","HorWndDir","VerWndDir", \
     "BldPitch2","IPDefl1","IPDefl2","TwstDefl1","TwstDefl2","TwstDefl3", "RootMxb2"\
@@ -23,7 +23,7 @@ def fast_read():
 
 def init_fast():
     for l in labels:
-        create_stream(l)
+        create_source(l)
     cond = lambda: True # this generator should always fire
     add_generator(fast_read(), cond)
 
